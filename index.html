@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gussa Ho Kya?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #fce6f4, #fbe4ff);
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #ff3366;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .heart {
+            color: #ff3366;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .button {
+            padding: 12px 30px;
+            background-color: #ff3366;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            animation: float 2.5s ease-in-out infinite;
+        }
+        .button:hover {
+            background-color: #ff6699;
+        }
+        .button:active {
+            transform: scale(0.95);
+        }
+        #message {
+            font-size: 1.4rem;
+            color: #444;
+            margin-top: 20px;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Gussa Ho Kya?</h1>
+        <div class="heart">❤️</div>
+        <p>Bolo Bolo😉😉</p>
+        <div class="button-container">
+            <button class="button" onclick="showMessage('nahi')">Nahi 😏</button>
+            <button class="button" onclick="showMessage('ha')">Ha 😠</button>
+        </div>
+        <p id="message">Yay! Tumhe mana liya! 😍</p>
+    </div>
+
+    <script>
+        function showMessage(response) {
+            var message = document.getElementById("message");
+            
+            if (response === 'nahi') {
+                message.innerHTML = "धनियाVaad😍<br>Aao fir whatsapp me online 😂";
+            } else if (response === 'ha') {
+                message.innerHTML = "Bani raho😂<br>aa jao whatsapp me fir se😂";
+            }
+            
+            message.style.display = "block";
+        }
+    </script>
+</body>
+</html>
